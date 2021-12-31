@@ -6,6 +6,8 @@ namespace CarLotSimulator
     {
         private static string vroom;
         private static string beep;
+        private static object lot;
+        private static object lotCars;
 
         public static object Year { get; private set; }
         public static object Model { get; private set; }
@@ -37,6 +39,7 @@ namespace CarLotSimulator
             aaronsCar.EngineNoise = "vroooom";
             aaronsCar.HonkNoise = "boom boom";
             aaronsCar.IsDriveable = true;
+
             //Instantiation 2
             var ashleyscar = new Car();
             {
@@ -49,16 +52,14 @@ namespace CarLotSimulator
               
             }
             //Instantiation 3
+           
             var navysCar = new Car(2016, Nissan, Rougue, vroom, beep, true);
 
             //Call the methods
             aaronsCar.MakeEngineNoise();
             ashleyscar.MakeEngineNoise();
             navysCar.MakeEngineNoise();
-
-            
-
-
+     
 
             //*************BONUS*************//
 
@@ -70,6 +71,14 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+
+
+            foreach (var car in lot.Car) 
+            {
+                Console.WriteLine($"Year: {car.Year} Make: {car.Make} Model {car.Model}");
+            }
         }
     }
 }

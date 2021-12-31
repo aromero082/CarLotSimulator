@@ -6,6 +6,7 @@ namespace CarLotSimulator
 {
     public class Car
     {
+
         private bool engineNoise;
 
         public int Year { get; set; }
@@ -14,6 +15,7 @@ namespace CarLotSimulator
         public string EngineNoise { get; set; }
         public string HonkNoise { get; set; }
         public bool IsDriveable { get; set; }
+
 
         public void MakeEngineNoise()
         {
@@ -32,10 +34,12 @@ namespace CarLotSimulator
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;
             IsDriveable = true;
+
         }
 
         public Car()
         {
+            CarLot.numberOfCars++;
         }
 
      
